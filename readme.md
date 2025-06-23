@@ -8,12 +8,7 @@ A modern landing page for promoting the [The Nuclear Toolbox](https://nucleartoo
 - Launches the full app directly
 - Easy to deploy with Vercel or GitHub Pages
 
-## 🚀 Deployment
-
-- **Vercel**: Import this repo and deploy instantly
-- **GitHub Pages**: Push and enable Pages in repo settings
-
-## 🧠 App Features
+##  App Features
 
 - Criticality calculators
 - Decay chain viewer
