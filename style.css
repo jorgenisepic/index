@@ -71,4 +71,55 @@ body {
   height: auto;
   margin-top: 10px;
 }
+
+
+.beta-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.beta-form input,
+.beta-form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #1c1c1e;
+  color: #fff;
+  resize: vertical;
+}
+
+.beta-form input::placeholder,
+.beta-form textarea::placeholder {
+  color: #aaa;
+}
+
+.join-btn {
+  background: #ff4757;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.join-btn:hover {
+  background: #e84118;
+}
+
+
 }

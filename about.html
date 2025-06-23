@@ -21,23 +21,22 @@
 
     <h2>📣 Join Our Beta Program</h2>
     <p>We’re looking for early testers and collaborators. Interested? <a href="mailto:nucleartoolbox@gmail.com">Email us</a> or fill the form below:</p>
-    <form action="https://formspree.io/f/mpwrykzn" method="POST">
-       <label>
-      Your email:
-      <input type="email" name="email" required placeholder="you@example.com">
-    </label><br><br>
-    
-    <label>
-      Your message:
-      <textarea name="message" placeholder="Tell us why you're interested..."></textarea>
-    </label><br><br>
+    <form action="https://formspree.io/f/mpwrykzn" method="POST" class="beta-form">
+  <div class="form-group">
+    <label for="email">Your Email</label>
+    <input type="email" name="email" id="email" placeholder="you@example.com" required />
+  </div>
 
-    <button type="submit">Join Beta</button>
-    </form>
+  <div class="form-group">
+    <label for="message">Your Message</label>
+    <textarea name="message" id="message" placeholder="Tell us why you're interested..."></textarea>
+  </div>
 
+  <button type="submit" class="join-btn">🚀 Join Beta</button>
+</form>
     <hr />
 
-        <a href="index.html" class="mini-button">Go to Index</a>
+    <a href="index.html" class="mini-button">Go to Index</a>
   </div>
 </body>
 </html>
