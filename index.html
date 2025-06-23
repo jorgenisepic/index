@@ -1,36 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Nuclear Toolbox</title>
+  <meta charset="UTF-8" />
+  <title>Nuclear Toolbox Launchpad</title>
   <style>
-    body { font-family: sans-serif; text-align: center; margin: 0; padding: 0; background: #0e101c; color: white; }
-    .container { padding: 50px; max-width: 800px; margin: auto; }
-    .button {
-      background-color: #08f;
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f1117;
+      color: #f4f4f4;
+      margin: 0; padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5em;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .card {
+      background: #1a1e29;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+    .icon {
+      font-size: 3em;
+      margin-bottom: 10px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    .bounce {
+      animation: bounce 1.5s infinite;
+    }
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .btn {
+      background: #0077cc;
       color: white;
-      padding: 15px 30px;
+      padding: 12px 24px;
+      border-radius: 6px;
       text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      margin-top: 30px;
       display: inline-block;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #005fa3;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>The Nuclear Toolbox</h1>
-    <p>Precision tools for researchers, engineers, and educators in the nuclear field.</p>
-    <ul style="list-style: none; padding: 0;">
-      <li>⚛️ Criticality Calculators</li>
-      <li>☢️ Decay Chain Analysis</li>
-      <li>📊 Radiation Dose Comparison</li>
-      <li>🧬 Isotope Data Explorer</li>
-      <li>🔬 Reactor Core Designer</li>
-    </ul>
-    <a class="button" href="https://nucleartoolbox.streamlit.app" target="_blank">Launch App</a>
+    <h1 class="bounce">⚙️ Nuclear Toolbox Launchpad</h1>
+    <p>Access core tools, documentation, admin portal, and live demos.</p>
+
+    <div class="grid">
+      <!-- Launch App -->
+      <div class="card" onclick="window.open('/app', '_blank')">
+        <div class="icon">🚀</div>
+        <h3>Launch Web App</h3>
+        <p>Full suite of simulations and calculators.</p>
+      </div>
+      <!-- Reactor Designer -->
+      <div class="card" onclick="window.open('/reactor-designer.html', '_blank')">
+        <div class="icon">🔧</div>
+        <h3>Reactor Core Designer</h3>
+        <p>Customize core geometry and enrichment.</p>
+      </div>
+      <!-- Criticality Calculator -->
+      <div class="card" onclick="window.open('/criticality-calc.html', '_blank')">
+        <div class="icon">⚛️</div>
+        <h3>k-effective Calculator</h3>
+        <p>Analyze core reactivity in real-time.</p>
+      </div>
+      <!-- Isotope Database -->
+      <div class="card" onclick="window.open('/database.html', '_blank')">
+        <div class="icon">🧬</div>
+        <h3>Isotope Explorer</h3>
+        <p>Search & visualize isotope data.</p>
+      </div>
+      <!-- Live Dashboard -->
+      <div class="card" onclick="window.open('/dashboard.html', '_blank')">
+        <div class="icon">📡</div>
+        <h3>Live Research Dashboard</h3>
+        <p>View real-time simulation metrics.</p>
+      </div>
+      <!-- Documentation -->
+      <div class="card" onclick="window.open('/docs', '_blank')">
+        <div class="icon">📚</div>
+        <h3>Documentation & API</h3>
+        <p>Comprehensive manuals and code references.</p>
+      </div>
+    </div>
+
+    <a class="btn" href="/admin">Admin Portal</a>
+    <p style="margin-top:30px; font-size:0.9em; color:#aaa;">&copy; 2025 The Nuclear Toolbox — <a class="btn" href="/terms.html" style="background:transparent; padding:0; font-size:0.9em;">Terms of Use</a></p>
   </div>
 </body>
 </html>
