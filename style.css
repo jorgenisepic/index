@@ -59,4 +59,16 @@ body {
 
 .mini-button:hover {
   background-color: #ff0000;
+
+  .logo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -10px;
+}
+
+.logo-top {
+  max-width: 100px;
+  height: auto;
+  margin-top: 10px;
+}
 }
