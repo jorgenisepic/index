@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
+
   
   
   
@@ -72,20 +71,6 @@
     }
   </style>
 </head>
-<script>
-  
-  const firebaseConfig = {
-        apiKey: "AIzaSyD2eaoj-MFCEYsLpQjVI-BojZV2UJmqg3E",
-    authDomain: "nuclear-toolbox-auth.firebaseapp.com",
-    projectId: "nuclear-toolbox-auth",
-    storageBucket: "nuclear-toolbox-auth.firebasestorage.app",
-    messagingSenderId: "794707682182",
-    appId: "1:794707682182:web:dcdaf8cc714f693e7bc207",
-    measurementId: "G-3K1K59ZSB9"
-  };
-  firebase.initializeApp(firebaseConfig);
-</script>
-
 
 
 <body>
@@ -93,48 +78,6 @@
     <h1 class="bounce">⚙️ Nuclear Toolbox Launchpad</h1>
     <p>Access core tools, documentation, admin portal, and live demos.</p>
 
-<div id="auth">
-  <input type="email" id="email" placeholder="Email"><br>
-  <input type="password" id="password" placeholder="Password"><br>
-  <button onclick="signUp()">Sign Up</button>
-  <button onclick="logIn()">Log In</button>
-  <button onclick="logOut()">Log Out</button>
-</div>
-
-
-<script>
-  const auth = firebase.auth();
-
-  function signUp() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    auth.createUserWithEmailAndPassword(email, password)
-      .then(() => alert("Signed Up"))
-      .catch(err => alert(err.message));
-  }
-
-  function logIn() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    auth.signInWithEmailAndPassword(email, password)
-      .then(() => {
-        alert("Logged In");
-        document.querySelector(".card").style.display = "block";
-      })
-      .catch(err => alert(err.message));
-  }
-
-  function logOut() {
-    auth.signOut().then(() => alert("Logged Out"));
-  }
-
-  // Hide app by default
-  auth.onAuthStateChanged(user => {
-    if (!user) {
-      document.querySelector(".card").style.display = "none";
-    }
-  });
-</script>
 
 
     <div class="card-container">
