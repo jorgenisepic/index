@@ -121,5 +121,15 @@ body {
   background: #e84118;
 }
 
+#update-bar {
+  background: #ff4757;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
 
 }
