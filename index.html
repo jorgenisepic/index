@@ -237,6 +237,25 @@
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   border: 1px solid rgba(0, 255, 255, 0.4);
 }
+.fact-box {
+  background: #1c1f2a;
+  padding: 20px;
+  border-radius: 12px;
+  color: #f4f4f4;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.3);
+  margin-top: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.fact-box h3 {
+  color: #ff4c4c;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 
   </style>
@@ -249,6 +268,11 @@
     🎉 New update "The Isotopes Update Alpha v1.1.3 is out!"
   </div>
 </div>
+<div class="fact-box">
+  <h3>☢️ Nuclear Fact of the Day</h3>
+  <p id="nuclearFact"></p>
+</div>
+
   <div class="container">
     <h1 class="bounce">Nuclear Toolbox Menu</h1>
     <p>Access core tools, documentation, admin portal, and live demos.</p>
@@ -323,20 +347,38 @@
 
 
 <script>
-  function calculateHalfLife() {
-    const initial = parseFloat(document.getElementById('initialAmount').value);
-    const halfLife = parseFloat(document.getElementById('halfLife').value);
-    const time = parseFloat(document.getElementById('timeElapsed').value);
+const facts = [
+  "One gram of U-235 releases the same energy as burning 3 tons of coal.",
+  "Chernobyl released over 400 times more radiation than Hiroshima.",
+  "Uranium was named after the planet Uranus.",
+  "A single nuclear submarine can operate for 25 years without refueling.",
+  "Nuclear energy provides ~10% of the world's electricity.",
+  "Fusion powers the Sun, fission powers most nuclear reactors on Earth.",
+  "Plutonium-239 has a half-life of over 24,000 years.",
+  "The first nuclear test was called 'Trinity' and detonated in 1945.",
+  "Radiation is measured in sieverts (Sv), but millisieverts (mSv) are more common for humans.",
+  "The average person is exposed to 2.4 mSv of background radiation per year.",
+  "Control rods in reactors absorb neutrons to regulate the fission rate.",
+  "The RBMK reactor design used in Chernobyl had no full containment dome.",
+  "France generates about 70% of its electricity from nuclear power.",
+  "Spent nuclear fuel can remain radioactive for thousands of years.",
+  "The Oklo reactor in Gabon was a natural nuclear fission reactor 2 billion years ago.",
+  "The Manhattan Project employed over 130,000 people during WWII.",
+  "Heavy water (D2O) is used as a moderator in certain types of nuclear reactors.",
+  "The ITER project is building the world’s largest nuclear fusion reactor in France.",
+  "Nuclear propulsion is used in icebreakers, submarines, and aircraft carriers.",
+  "Ionizing radiation can strip electrons from atoms, damaging living cells.",
+  "Gamma rays are the most penetrating form of nuclear radiation.",
+  "Most nuclear waste is low-level and safely managed at surface facilities.",
+  "The Fukushima disaster was triggered by a tsunami, not reactor failure.",
+  "Alpha particles can’t penetrate skin but are dangerous if inhaled or ingested.",
+  "Thorium is a promising alternative to uranium for future reactors."
+];
 
-    if (isNaN(initial) || isNaN(halfLife) || isNaN(time)) {
-      document.getElementById('result').innerText = "❌ Please enter all values.";
-      return;
-    }
-
-    const remaining = initial * Math.pow(0.5, time / halfLife);
-    document.getElementById('result').innerText = `☢️ Remaining dose: ${remaining.toFixed(4)} Sv`;
-  }
+const today = new Date().getDate();
+document.getElementById("nuclearFact").innerText = facts[today % facts.length];
 </script>
+
 
 
 </html>
