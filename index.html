@@ -220,61 +220,33 @@
   border: 1px solid rgba(0, 255, 255, 0.4);
 }
 
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 30px;
-  padding: 40px;
-  flex-wrap: wrap;
-}
-
-.glossary-sidebar {
-  width: 280px;
-  max-height: 600px;
-  overflow-y: auto;
+.mini-tool {
   background: #1a1e29;
+  color: white;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 10px rgba(0, 255, 255, 0.3);
-  font-size: 0.9em;
-  transition: box-shadow 0.3s ease;
+  margin: 20px auto;
+  border-radius: 10px;
+  width: fit-content;
+  text-align: left;
+  box-shadow: 0 0 15px #0080ff55;
 }
-
-.glossary-sidebar h3 {
-  font-size: 1.3em;
+.mini-tool input {
   margin-bottom: 10px;
+  padding: 4px;
+  border-radius: 4px;
+  border: none;
 }
-
-.glossary-sidebar ul {
-  list-style: none;
-  padding: 0;
+.mini-tool button {
+  padding: 6px 12px;
+  background: #0080ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
-
-.glossary-sidebar li {
-  margin-bottom: 10px;
-  line-height: 1.4em;
-  border-left: 3px solid #00ffff;
-  padding-left: 10px;
+.mini-tool button:hover {
+  background: #0059b3;
 }
-
-.glossary-sidebar:hover {
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.7), 0 0 15px rgba(0, 255, 255, 0.5);
-}
-
-.glossary-sidebar {
-  margin-top: 40px; /* space from section above */
-}
-
-.info-flex {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  align-items: flex-start;
-  flex-wrap: wrap; /* for responsiveness */
-}
-
 
   </style>
 </head>
@@ -307,23 +279,15 @@ body {
     Yes. The web tools are open access, with plans for future research collaborations.</p>
 </div>
 
-<div class="glossary-sidebar">
-  <h3>📘 Glossary</h3>
-  <ul>
-    <li><strong>Isotope</strong>: A variant of an element with a different number of neutrons.</li>
-    <li><strong>Decay</strong>: The process by which unstable nuclei lose energy.</li>
-    <li><strong>Critical Mass</strong>: The minimum amount of fissile material needed to sustain a chain reaction.</li>
-    <li><strong>Moderator</strong>: A material used in reactors to slow down neutrons.</li>
-    <li><strong>Half-life</strong>: Time taken for half the atoms in a sample to decay.</li>
-    <li><strong>Reactor Core</strong>: The section of a reactor where nuclear reactions occur.</li>
-    <!-- Add more terms as needed -->
-  </ul>
+<div class="mini-tool">
+  <h3>🧪 Half-Life Calculator</h3>
+  <label>Initial amount (grams): <input type="number" id="initialAmount"></label><br>
+  <label>Half-life (in years): <input type="number" id="halfLife"></label><br>
+  <label>Time elapsed (in years): <input type="number" id="timeElapsed"></label><br>
+  <button onclick="calculateHalfLife()">Calculate</button>
+  <p id="result"></p>
 </div>
 
-<div class="info-flex">
-  <div class="card-container"> ... </div>
-  <div class="glossary-sidebar"> ... </div>
-</div>
 
     <div class="card-container">
   <!-- Launch App -->
@@ -372,4 +336,23 @@ body {
     <a href="about.html" class="mini-button">Go to About Page</a>
 
 </body>
+
+
+
+<script>
+  function calculateHalfLife() {
+    const initial = parseFloat(document.getElementById('initialAmount').value);
+    const halfLife = parseFloat(document.getElementById('halfLife').value);
+    const time = parseFloat(document.getElementById('timeElapsed').value);
+
+    if (isNaN(initial) || isNaN(halfLife) || isNaN(time)) {
+      document.getElementById('result').innerText = "❌ Please enter all values.";
+      return;
+    }
+
+    const remaining = initial * Math.pow(0.5, time / halfLife);
+    document.getElementById('result').innerText = `⚛️ Remaining amount: ${remaining.toFixed(4)} g`;
+  }
+</script>
+
 </html>
