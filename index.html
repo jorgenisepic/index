@@ -126,50 +126,91 @@
 }
 
 .learning-corner {
-  background: #1a1e29;
-  padding: 50px 20px;
-  border-radius: 12px;
+  background: #1c1f28;
+  padding: 40px 20px;
+  border-radius: 10px;
   margin-top: 40px;
 }
 
 .learning-corner h2 {
   text-align: center;
-  color: #f4f4f4;
-  font-size: 2em;
+  color: #f1f1f1;
+  font-size: 1.8em;
+  margin-bottom: 10px;
 }
 
 .learning-corner p {
   text-align: center;
-  color: #aaa;
-  margin-bottom: 30px;
+  color: #bbb;
+  font-size: 0.95em;
+  margin-bottom: 25px;
 }
 
 .learning-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
+  gap: 16px;
 }
 
 .learning-grid .card {
-  background: #2a2f3a;
-  padding: 20px;
-  border-radius: 10px;
-  width: 260px;
+  background: #2a2f3b;
+  padding: 16px;
+  border-radius: 8px;
+  width: 210px;
   color: white;
   text-align: left;
-  transition: transform 0.3s;
+  font-size: 0.9em;
+  transition: transform 0.25s;
 }
 
 .learning-grid .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
 
+.learning-grid .card h4 {
+  margin: 0 0 6px;
+  font-size: 1em;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.learning-grid .card {
+  background: #2a2f3b;
+  padding: 16px;
+  border-radius: 8px;
+  width: 210px;
+  color: white;
+  text-align: left;
+  font-size: 0.9em;
+  transition: transform 0.25s, box-shadow 0.25s;
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+.learning-grid .card:nth-child(1) { animation-delay: 0.1s; }
+.learning-grid .card:nth-child(2) { animation-delay: 0.2s; }
+.learning-grid .card:nth-child(3) { animation-delay: 0.3s; }
+.learning-grid .card:nth-child(4) { animation-delay: 0.4s; }
+.learning-grid .card:nth-child(5) { animation-delay: 0.5s; }
+
 .learning-grid .card a {
-  color: #ff5959;
+  display: inline-block;
+  margin-top: 8px;
+  color: #ff4444;
   text-decoration: none;
   font-weight: bold;
+  font-size: 0.9em;
 }
 
   </style>
@@ -213,28 +254,38 @@
     <p>Full suite of simulations and calculators.</p>
   </div>
 
-
-  <section class="learning-corner">
+<section class="learning-corner">
   <h2>🎓 Learning Corner</h2>
-  <p>Curated resources to help you learn and explore nuclear engineering fundamentals.</p>
+  <p>Explore handpicked tools and materials for nuclear research and education.</p>
   <div class="learning-grid">
     <div class="card">
-      <h3>📘 MIT OpenCourseWare</h3>
-      <p>Free university-level nuclear engineering courses.</p>
-      <a href="https://ocw.mit.edu/courses/nuclear-engineering/" target="_blank">Explore →</a>
+      <h4>📘 MIT OpenCourseWare</h4>
+      <p>University-level nuclear engineering courses.</p>
+      <a href="https://ocw.mit.edu/courses/nuclear-engineering/" target="_blank">Visit →</a>
     </div>
     <div class="card">
-      <h3>⚛️ IAEA Handbook</h3>
-      <p>Practical guides and safety protocols from the IAEA.</p>
-      <a href="https://www.iaea.org/publications" target="_blank">View Resources →</a>
+      <h4>📖 IAEA eLibrary</h4>
+      <p>Safety protocols, reactor guides, and radiation standards.</p>
+      <a href="https://www.iaea.org/publications" target="_blank">Access →</a>
     </div>
     <div class="card">
-      <h3>🧪 Reactor Simulations</h3>
-      <p>Try nuclear simulations and criticality experiments.</p>
-      <a href="https://www.nuclear-power.com" target="_blank">Simulate →</a>
+      <h4>🧪 Reactor Simulator</h4>
+      <p>Test virtual reactors and fission systems.</p>
+      <a href="https://www.nuclear-power.com" target="_blank">Try →</a>
+    </div>
+    <div class="card">
+      <h4>🔬 Radionuclide Chart</h4>
+      <p>Interactive chart of nuclides with decay data.</p>
+      <a href="https://www.nndc.bnl.gov/chart/" target="_blank">Explore →</a>
+    </div>
+    <div class="card">
+      <h4>📊 Neutron Cross-Sections</h4>
+      <p>ENDF datasets and thermal absorption tables.</p>
+      <a href="https://www.nndc.bnl.gov/endf/" target="_blank">View →</a>
     </div>
   </div>
 </section>
+ 
 
 </div>
 
