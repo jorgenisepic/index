@@ -103,13 +103,26 @@
   background: #1e222d;
   padding: 30px;
   border-radius: 15px;
-  margin-top: 40px;
+  margin: 40px auto; /* added margin below */
   text-align: left;
   line-height: 1.7;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  animation: fadeInUp 1s ease;
 }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .info-box h2 {
-  color: #ffcc00;
+  color: #ff5757; /* Red-orange for icons only */
 }
 
   </style>
@@ -126,10 +139,10 @@
 
 
   <div class="info-box">
-    <h2>🎯 Mission Statement</h2>
+    <h2>Mission Statement</h2>
     <p>The Nuclear Toolbox is a passion-driven project built to support education, research, and innovation in nuclear science. Our goal is to bridge accessibility and functionality for researchers, students, and professionals.</p>
 
-    <h2>❓ FAQ</h2>
+    <h2>FAQ</h2>
     <p><strong>What is this?</strong><br>
     A suite of nuclear engineering tools—decay simulators, isotope data, criticality calculators, and more.</p>
 
