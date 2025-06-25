@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Darkroom | Nuclear Toolbox</title>
+  <style>
+    body {
+      background: #0f0f12;
+      color: #f4f4f4;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0; padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 0.2em;
+      text-shadow: 0 0 10px #ff00ff;
+    }
+    p {
+      color: #bbb;
+      margin-bottom: 30px;
+    }
+    .card {
+      background: #1a1d24;
+      border: 1px solid #3f3f46;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+      transition: all 0.3s ease-in-out;
+    }
+    .card:hover {
+      box-shadow: 0 0 25px rgba(255, 0, 255, 0.6);
+      transform: scale(1.02);
+    }
+    .button-toggle {
+      padding: 10px 20px;
+      background: #8a2be2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+      box-shadow: 0 0 8px #8a2be2;
+    }
+    .button-toggle:hover {
+      background: #a64bf4;
+      box-shadow: 0 0 15px #a64bf4;
+    }
+    .section-title {
+      color: #f44aff;
+      font-size: 1.3em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧪 Darkroom</h1>
+    <p>Welcome to the experimental zone. These are unstable or in-progress features. Use at your own risk.</p>
+
+    <div class="card">
+      <div class="section-title">Decay Chain Visualizer (Alpha)</div>
+      <p>A prototype visualizer of isotope decay trees. May cause browser lag or visual chaos.</p>
+      <button class="button-toggle" onclick="alert('Coming soon: Decay Chain Alpha')">Launch Visualizer</button>
+    </div>
+
+    <div class="card">
+      <div class="section-title">Mutator</div>
+      <p>Randomly apply visual distortions to the site. Great for chaos testing.</p>
+      <button class="button-toggle" onclick="document.body.style.filter='hue-rotate(' + (Math.random()*360) + 'deg)'">⚡ Mutate</button>
+    </div>
+
+    <div class="card">
+      <div class="section-title">Theme Switch</div>
+      <p>Toggle between light and dark themes. (Light mode may burn your eyes)</p>
+      <button class="button-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+  </div>
+
+  <script>
+    let dark = true;
+    function toggleTheme() {
+      if (dark) {
+        document.body.style.background = '#f4f4f4';
+        document.body.style.color = '#0f0f12';
+        dark = false;
+      } else {
+        document.body.style.background = '#0f0f12';
+        document.body.style.color = '#f4f4f4';
+        dark = true;
+      }
+    }
+  </script>
+</body>
+</html>
