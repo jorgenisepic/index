@@ -213,6 +213,45 @@
   font-size: 0.9em;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.glossary-sidebar {
+  width: 280px;
+  max-height: 600px;
+  overflow-y: auto;
+  background: #1a1e29;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 10px rgba(0, 255, 255, 0.3);
+  font-size: 0.9em;
+  transition: box-shadow 0.3s ease;
+}
+
+.glossary-sidebar h3 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+.glossary-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.glossary-sidebar li {
+  margin-bottom: 10px;
+  line-height: 1.4em;
+  border-left: 3px solid #00ffff;
+  padding-left: 10px;
+}
+
+
   </style>
 </head>
 
@@ -244,7 +283,18 @@
     Yes. The web tools are open access, with plans for future research collaborations.</p>
 </div>
 
-
+<div class="glossary-sidebar">
+  <h3>📘 Glossary</h3>
+  <ul>
+    <li><strong>Isotope</strong>: A variant of an element with a different number of neutrons.</li>
+    <li><strong>Decay</strong>: The process by which unstable nuclei lose energy.</li>
+    <li><strong>Critical Mass</strong>: The minimum amount of fissile material needed to sustain a chain reaction.</li>
+    <li><strong>Moderator</strong>: A material used in reactors to slow down neutrons.</li>
+    <li><strong>Half-life</strong>: Time taken for half the atoms in a sample to decay.</li>
+    <li><strong>Reactor Core</strong>: The section of a reactor where nuclear reactions occur.</li>
+    <!-- Add more terms as needed -->
+  </ul>
+</div>
 
     <div class="card-container">
   <!-- Launch App -->
