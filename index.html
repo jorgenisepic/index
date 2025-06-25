@@ -213,6 +213,14 @@
   font-size: 0.9em;
 }
 
+.learning-grid .card:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6), 0 0 30px rgba(0, 255, 255, 0.3);
+  transform: translateY(-5px) scale(1.02);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border: 1px solid rgba(0, 255, 255, 0.4);
+}
+
+
 body {
   display: flex;
   justify-content: center;
@@ -253,6 +261,18 @@ body {
 
 .glossary-sidebar:hover {
   box-shadow: 0 0 25px rgba(0, 255, 255, 0.7), 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.glossary-sidebar {
+  margin-top: 40px; /* space from section above */
+}
+
+.info-flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap; /* for responsiveness */
 }
 
 
@@ -298,6 +318,11 @@ body {
     <li><strong>Reactor Core</strong>: The section of a reactor where nuclear reactions occur.</li>
     <!-- Add more terms as needed -->
   </ul>
+</div>
+
+<div class="info-flex">
+  <div class="card-container"> ... </div>
+  <div class="glossary-sidebar"> ... </div>
 </div>
 
     <div class="card-container">
