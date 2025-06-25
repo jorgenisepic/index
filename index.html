@@ -59,7 +59,7 @@
       50% { transform: translateY(-10px); }
     }
     .btn {
-      background: #0077cc;
+      background: #197ec5;
       color: white;
       padding: 12px 24px;
       border-radius: 6px;
@@ -125,6 +125,53 @@
   color: #ff5757; /* Red-orange for icons only */
 }
 
+.learning-corner {
+  background: #1a1e29;
+  padding: 50px 20px;
+  border-radius: 12px;
+  margin-top: 40px;
+}
+
+.learning-corner h2 {
+  text-align: center;
+  color: #f4f4f4;
+  font-size: 2em;
+}
+
+.learning-corner p {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+.learning-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.learning-grid .card {
+  background: #2a2f3a;
+  padding: 20px;
+  border-radius: 10px;
+  width: 260px;
+  color: white;
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.learning-grid .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.learning-grid .card a {
+  color: #ff5959;
+  text-decoration: none;
+  font-weight: bold;
+}
+
   </style>
 </head>
 
@@ -165,6 +212,30 @@
     <h3>Launch Web App</h3>
     <p>Full suite of simulations and calculators.</p>
   </div>
+
+
+  <section class="learning-corner">
+  <h2>🎓 Learning Corner</h2>
+  <p>Curated resources to help you learn and explore nuclear engineering fundamentals.</p>
+  <div class="learning-grid">
+    <div class="card">
+      <h3>📘 MIT OpenCourseWare</h3>
+      <p>Free university-level nuclear engineering courses.</p>
+      <a href="https://ocw.mit.edu/courses/nuclear-engineering/" target="_blank">Explore →</a>
+    </div>
+    <div class="card">
+      <h3>⚛️ IAEA Handbook</h3>
+      <p>Practical guides and safety protocols from the IAEA.</p>
+      <a href="https://www.iaea.org/publications" target="_blank">View Resources →</a>
+    </div>
+    <div class="card">
+      <h3>🧪 Reactor Simulations</h3>
+      <p>Try nuclear simulations and criticality experiments.</p>
+      <a href="https://www.nuclear-power.com" target="_blank">Simulate →</a>
+    </div>
+  </div>
+</section>
+
 </div>
 
  <hr />
