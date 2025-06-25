@@ -220,33 +220,62 @@
   border: 1px solid rgba(0, 255, 255, 0.4);
 }
 
+.tool-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
 .mini-tool {
   background: #1a1e29;
   color: white;
   padding: 20px;
-  margin: 20px auto;
-  border-radius: 10px;
-  width: fit-content;
-  text-align: left;
-  box-shadow: 0 0 15px #0080ff55;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00b7ff55;
+  width: 260px;
 }
-.mini-tool input {
-  margin-bottom: 10px;
-  padding: 4px;
-  border-radius: 4px;
+
+.mini-tool input.gray-input {
+  background-color: #2b2e39;
   border: none;
-}
-.mini-tool button {
-  padding: 6px 12px;
-  background: #0080ff;
+  padding: 6px;
   color: white;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.mini-tool button {
+  background: #0077cc;
   border: none;
+  color: white;
+  padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
 }
+
 .mini-tool button:hover {
-  background: #0059b3;
+  background: #005fa3;
 }
+
+.launch-wrapper .card {
+  background: #1a1e29;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  width: 260px;
+}
+
+.launch-wrapper .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #ff0066;
+}
+
 
   </style>
 </head>
@@ -279,23 +308,31 @@
     Yes. The web tools are open access, with plans for future research collaborations.</p>
 </div>
 
-<div class="mini-tool">
-  <h3>🧪 Half-Life Calculator</h3>
-  <label>Initial amount (grams): <input type="number" id="initialAmount"></label><br>
-  <label>Half-life (in years): <input type="number" id="halfLife"></label><br>
-  <label>Time elapsed (in years): <input type="number" id="timeElapsed"></label><br>
-  <button onclick="calculateHalfLife()">Calculate</button>
-  <p id="result"></p>
-</div>
-
-
-    <div class="card-container">
-  <!-- Launch App -->
-  <div class="card" onclick="window.open('https://nucleartoolbox.streamlit.app', '_blank')">
-    <div class="icon">🚀</div>
-    <h3>Launch Web App</h3>
-    <p>Full suite of simulations and calculators.</p>
+<div class="tool-wrapper">
+  <div class="mini-tool">
+    <h3>🧪 Half-Life Calculator</h3>
+    <label>Initial dose (in Sv):<br>
+      <input type="number" id="initialAmount" class="gray-input">
+    </label><br>
+    <label>Half-life (in years):<br>
+      <input type="number" id="halfLife" class="gray-input">
+    </label><br>
+    <label>Time elapsed (in years):<br>
+      <input type="number" id="timeElapsed" class="gray-input">
+    </label><br>
+    <button onclick="calculateHalfLife()">Calculate</button>
+    <p id="result">☢️ Remaining dose: -- Sv</p>
   </div>
+
+  <div class="launch-wrapper">
+    <!-- Existing launch card -->
+    <div class="card" onclick="window.open('https://nucleartoolbox.streamlit.app', '_blank')">
+      <div class="icon">🚀</div>
+      <h3>Launch Web App</h3>
+      <p>Full suite of simulations and calculators.</p>
+    </div>
+  </div>
+</div>
 
 <section class="learning-corner">
   <h2>🎓 Learning Corner</h2>
@@ -351,8 +388,9 @@
     }
 
     const remaining = initial * Math.pow(0.5, time / halfLife);
-    document.getElementById('result').innerText = `⚛️ Remaining amount: ${remaining.toFixed(4)} g`;
+    document.getElementById('result').innerText = `☢️ Remaining dose: ${remaining.toFixed(4)} Sv`;
   }
 </script>
+
 
 </html>
